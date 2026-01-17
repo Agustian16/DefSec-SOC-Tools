@@ -11,7 +11,7 @@ sudo apt install -y git curl unzip gnupg-agent software-properties-common
 # Create dedicated MISP user
 echo "=== [2/10] Creating user misp ==="
 sudo adduser misp --gecos "MISP,,," --disabled-password
-echo "misp:M1sPMti123#! " | sudo chpasswd
+echo "misp:M1$p2026#! " | sudo chpasswd
 sudo usermod -aG sudo,staff,www-data misp
 
 # Install MISP
@@ -43,7 +43,7 @@ sudo -u www-data /var/www/MISP/app/Console/cake Admin setSetting "Security.passw
 # Reset admin password
 echo "=== [7/10] Resetting admin password ==="
 sudo -u www-data /var/www/MISP/app/Console/cake user list
-sudo -u www-data /var/www/MISP/app/Console/cake Password admin-misp@mahatek.net "M1sP123#!"
+sudo -u www-data /var/www/MISP/app/Console/cake Password admin-misp@mahatek.net "def$econ2026#!"
 
 # Load feeds
 echo "=== [8/10] Enabling default feeds ==="
@@ -84,8 +84,8 @@ sudo systemctl restart apache2
 
 # MISP installation complete
 echo "=============================================================="
-echo " MISP installation complete!      "
-echo " Access: https://localhost:8443   "
-echo " Username: admin-misp@mahatek.net "
-echo " Password: M1sP123#!              "
+echo " MISP installation complete!     "
+echo " Access: https://localhost:8443  "
+echo " Username: admin-misp@defsec.net "
+echo " Password: def$econ2026#!        "
 echo "=============================================================="
